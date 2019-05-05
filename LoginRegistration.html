@@ -27,7 +27,7 @@
           </ul>-->
           </div>
           <div class="panel-body">
-            <section id="register" class="form-action hideSection">
+            <section id="register" class="form-action hidden">
               <h1>Register</h1>
               <form role="register">
 
@@ -56,7 +56,7 @@
                     onclick="AN.AuthenticationModule.showSection(event)">Sign in</a></span>
               </form>
             </section>
-            <section id="login" class="form-action showSection">
+            <section id="login" class="form-action" novalidate>
               <h1>Login</h1>
               <form id="loginForm" role="Login">
 
@@ -82,7 +82,7 @@
                     onclick="AN.AuthenticationModule.showSection(event)">Create account</a></span>
               </form>
             </section>
-            <section id="reset" class="form-action hideSection">
+            <section id="reset" class="form-action hidden">
               <h1>Reset Password</h1>
               <form role="reset-password">
 

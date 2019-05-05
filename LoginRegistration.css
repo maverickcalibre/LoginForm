@@ -1,45 +1,35 @@
-body{
-    background-color: #525252;
-}
-.centered-form{
-	margin-top: 60px;
+form input.dirty.visited:valid {
+	border-bottom: 1px solid #3eb46e;
+    transition: all 0.3s ease-in-out;
 }
 
-.centered-form .panel{
-	background: rgba(255, 255, 255, 0.8);
-	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+[data-edit-mode='true'] form.submitted input:valid {
+    border-bottom: 1px solid #3eb46e;
 }
 
-.hideSection{
-  display: none;
+[data-edit-mode='true'] form.submitted input[value=""]:not(.dirty):not(visited):valid {
+    border-bottom: 1px solid #ddd;
 }
 
-.showSection{
-  display: block;
+form.submitted input:invalid {
+	border-bottom: 1px solid #fd4f57;
+    transition: all 0.3s ease-in-out;
+}
+form input.dirty.visited:invalid,
+form input.virtually_dirty:invalid {
+	border-bottom: 1px solid #fd4f57;
+    transition: all 0.3s ease-in-out;
 }
 
-input:required {
-  background:hsl(180, 50%, 90%);
-  border:1px solid #999;
+form input:invalid {
+    box-shadow: none; /* FF */
+    outline: 0;       /* IE */
 }
 
-input.visited:invalid{
-  border-color:hsl(0, 50%, 50%);
-  background:hsl(0, 50%, 90%);
+form input.dirty.visited:valid + span.form-validator_error {
+    display: none;
 }
 
-/* input:invalid {
-    border-color:hsl(0, 50%, 50%);
-    background:hsl(0, 50%, 90%);
-} */
-
-
-/* input:focus:required:invalid {
-  border-color:hsl(0, 50%, 50%);
-  background:hsl(0, 50%, 90%);
-}  */
-
-/* input:required:valid {
-  background-color: white; 
-  color: black;
-} */
+span.form-validator_error.hide {
+    display: none;
+}
