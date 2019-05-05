@@ -1,13 +1,32 @@
 "use strict";
+var AN = AN || (AN = {});
+
+AN.FormValidationConstantsModule = (function(){
+  var formValidatorConstants = {
+    NAME: 'FormValidator',
+    INPUT_SELECTOR: 'input,select,textarea',
+    STATES: {
+        DIRTY: 'dirty',
+        VIRTUALLY_DIRTY: 'virtually_dirty',
+        VISITED: 'visited',
+        SUBMITTED: 'submitted',
+        ERROR: 'form-validator_error'
+    },
+    EVENTS: {
+        SUBMIT_FORM: 'submit'
+    }
+  };
+
+  return formValidatorConstants;
+})();
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  var AN = AN || (AN = {});
   AN.AuthenticationModule = AN.AuthenticationModule || (AN.AuthenticationModule = {});
 
   AN.AuthenticationModule = (function () {
 
-
+    
     var showSection = function (ev) {
       ev.preventDefault();
 
@@ -88,3 +107,4 @@ document.addEventListener('DOMContentLoaded', function () {
   }());
 
 });
+
