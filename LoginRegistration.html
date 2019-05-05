@@ -65,8 +65,8 @@
                                       class="form-control input-sm"
                                       placeholder="Email Address"
                                       pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
-                                      data-pattern-error="Pattern error occured!!"
-                                      data-error="Required field!!!" 
+                                      data-pattern-mismatch="Pattern error occured!!"
+                                      data-value-missing="Required field!!!" 
                                       required>
                   <div id="invalidEmail" style="display: none;"></div>
                 </div>
@@ -77,7 +77,7 @@
                 </div>
                 <span><a href="#reset" id="forgotPasswordLink" onclick="AN.AuthenticationModule.showSection(event)">Forgot
                     password?</a></span>
-                <input type="submit" value="SIGN IN" class="btn btn-info btn-block">
+                <input id="login_submit" type="submit" value="SIGN IN" class="btn btn-info btn-block">
                 <span>Don't have an AutoNation account? <a href="#register" id="createAccountLink"
                     onclick="AN.AuthenticationModule.showSection(event)">Create account</a></span>
               </form>
