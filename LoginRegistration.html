@@ -1,0 +1,106 @@
+<html lang="en">
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href=".\LoginRegistration.css" rel="stylesheet" id="login-registration-css">
+  <script src="LoginRegistration.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row centered-form">
+      <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Please sign up for Bootsnipp <small>It's free!</small></h3>
+            <!--<ul class="tabs">
+            <li>
+              <a href="#login" id="loginLink" class="active" onclick="AN.AuthenticationModule.showSection(event)">Login</a>
+            </li>
+            <li>
+              <a href="#register" id= "registerLink" onclick="AN.AuthenticationModule.showSection(event)">Register</a>
+            </li>
+            <li>
+              <a href="#reset" id="resetLink" onclick="AN.AuthenticationModule.showSection(event)">Reset Password</a>
+            </li>
+          </ul>-->
+          </div>
+          <div class="panel-body">
+            <section id="register" class="form-action hideSection">
+              <h1>Register</h1>
+              <form role="register">
+
+                <div class="form-group">
+                  <input type="text" name="reg_first_name" id="reg_first_name" class="form-control input-sm"
+                    placeholder="First Name">
+                </div>
+
+                <div class="form-group">
+                  <input type="text" name="reg_last_name" id="reg_last_name" class="form-control input-sm"
+                    placeholder="Last Name">
+                </div>
+
+                <div class="form-group">
+                  <input type="email" name="reg_email" id="reg_email" class="form-control input-sm"
+                    placeholder="Email Address" required>
+                </div>
+
+                <div class="form-group">
+                  <input type="password" name="reg_password" id="reg_password" class="form-control input-sm"
+                    placeholder="Password">
+                </div>
+
+                <input type="submit" value="Create Account" class="btn btn-info btn-block">
+                <span>Already have an AutoNation account? <a href="#login" id="signInLink"
+                    onclick="AN.AuthenticationModule.showSection(event)">Sign in</a></span>
+              </form>
+            </section>
+            <section id="login" class="form-action showSection">
+              <h1>Login</h1>
+              <form id="loginForm" role="Login">
+
+                <div class="form-group">
+                  <input type="email" name="login_email" id="login_email" 
+                                      class="form-control input-sm"
+                                      placeholder="Email Address"
+                                      pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                                      data-pattern-error="Pattern error occured!!"
+                                      data-error="Required field!!!" 
+                                      required>
+                  <div id="invalidEmail" style="display: none;"></div>
+                </div>
+
+                <div class="form-group">
+                  <input type="password" name="login_password" id="login_password" class="form-control input-sm"
+                    placeholder="Password">
+                </div>
+                <span><a href="#reset" id="forgotPasswordLink" onclick="AN.AuthenticationModule.showSection(event)">Forgot
+                    password?</a></span>
+                <input type="submit" value="SIGN IN" class="btn btn-info btn-block">
+                <span>Don't have an AutoNation account? <a href="#register" id="createAccountLink"
+                    onclick="AN.AuthenticationModule.showSection(event)">Create account</a></span>
+              </form>
+            </section>
+            <section id="reset" class="form-action hideSection">
+              <h1>Reset Password</h1>
+              <form role="reset-password">
+
+                <div class="form-group">
+                  <input type="email" name="reset_email" id="reset_email" class="form-control input-sm"
+                    placeholder="Email Address">
+                </div>
+
+                <input type="submit" value="Send Reset Link" class="btn btn-info btn-block">
+                <span><a href="#login" id="loginInLink" onclick="AN.AuthenticationModule.showSection(event)">Back to
+                    login</a></span>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
