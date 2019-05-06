@@ -647,93 +647,33 @@ document.addEventListener('DOMContentLoaded', function () {
   self.validator = new AN.FormValidator(form);
 
   var loginEmail = document.getElementById("login_email");
+  var loginPassword = document.getElementById("login_password");
   var submitButton = document.getElementById('login_submit');
 
   loginEmail.addEventListener('input', function (event) {
+    self.form = form;
+    var isFormValid = self.form.checkValidity();
     
-    var isFormValid = self.validator.validateForm();
     self.validator.validateInput(this);
     
-    if(!isFormValid){
-      console.log('disable submit button now!!');
+    if(!isFormValid){      
       submitButton.disabled = true;
     }else{
       submitButton.disabled = false;
     }
-  });  
-
-  // var loginEmail = document.getElementById("login_email");
-
-  // self.validator.validateInput(loginEmail);
-
-  // loginEmail.addEventListener('blur', function (event) {
-  //   self.validator.validateInput(this);     
-  // });
-
-  // loginEmail.addEventListener('input', function (event) {
-  //   self.validator.validateInput(this);     
-  // });
-
-  //#region AN.ValidationModule
-  // AN.ValidationModule = (function (FormValidator) {
-  //   self = this;
-  //   var form = document.getElementById('loginForm');
-  //   var validator = new FormValidator(form);
+  });
+  
+  loginPassword.addEventListener('input', function (event) {
+    self.form = form;
+    var isFormValid = self.form.checkValidity();
     
-  //   var loginEmail = document.getElementById("login_email");
-        
-
+    self.validator.validateInput(this);
     
-  //   loginEmail.addEventListener('invalid', function (event) {
-  //     validator.validateInput(this);     
-  //   });
+    if(!isFormValid){      
+      submitButton.disabled = true;
+    }else{
+      submitButton.disabled = false;
+    }
+  }); 
 
-  //   loginEmail.addEventListener('input', function (event) {
-  //     validator.validateInput(this);     
-  //   });
-  //   //#region 
-  //   // loginEmail.addEventListener('focus', function (event) {
-  //   //   isEmailDirty = true;
-  //   // });
-
-  //   // loginEmail.addEventListener('input', function (event) {
-  //   //   console.log("loginEmail.value: ", loginEmail.value);
-  //   //   console.log("Validity: ", event.target.validity.valid);
-  //   //   if (loginEmail.validity.valid) {
-  //   //     loginEmail.classList.remove('invalid');
-  //   //     invalidMsgToShowField.style.display = 'none';
-  //   //   } else {
-  //   //     //if (isEmailDirty) {
-  //   //       loginEmail.classList.add('invalid');
-  //   //       invalidMsgToShowField.style.display = 'block';
-  //   //       setValidationMessage(event.target, invalidMsgToShowField);
-  //   //     //}
-  //   //   }
-  //   // });
-
-  //   // var setValidationMessage = function (ctrl, ctrlToShow){
-  //   //     //console.log('$$$ ctrl, ctrlToShow: ', ctrl, ctrlToShow);
-  //   //     console.log('$$$ ctrl.validity.patternMismatch: ', ctrl.validity.patternMismatch);
-  //   //     switch (true) {
-  //   //       case ctrl.validity.valueMissing:
-  //   //           //console.log('value is missing');
-  //   //           ctrlToShow.textContent = ctrl.dataset.error;
-  //   //           ctrlToShow.classList.add('error');
-  //   //           ctrlToShow.style.display = 'block';
-  //   //         break;
-  //   //       case ctrl.validity.patternMismatch:         
-  //   //           ctrlToShow.textContent = ctrl.dataset.patternError;
-  //   //         break;
-          
-  //   //       default:
-  //   //         break;
-  //   //     }
-
-  //   //     //console.log('$$$ ctrlToShow: ', ctrlToShow);
-  //   // };
-
-  //   //#endregion
-
-  // }(AN.FormValidator));
-  //#endregion AN.ValidationModule
 });
