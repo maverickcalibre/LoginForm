@@ -76,13 +76,14 @@
                                           class="form-control input-sm"
                                           placeholder="Password"
                                           pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[~@#\$%\^&\*_\+=`|{}:;!.\?()[\]-]*).{8,})"
+                                          autocomplete="off"
                                           data-pattern-mismatch="Pattern error occured!!"
                                           data-value-missing="Required field!!!" 
                                           required>
                 </div>
                 <span><a href="#reset" id="forgotPasswordLink" onclick="AN.AuthenticationModule.showSection(event)">Forgot
                     password?</a></span>
-                <input id="login_submit" type="submit" value="SIGN IN" class="btn btn-info btn-block">
+                <input id="login_submit" type="submit" value="SIGN IN" class="btn btn-info btn-block" disabled>
                 <span>Don't have an AutoNation account? <a href="#register" id="createAccountLink"
                     onclick="AN.AuthenticationModule.showSection(event)">Create account</a></span>
               </form>
